@@ -1,5 +1,5 @@
-import  {loadResourceAsHtml} from '../libs/resourcesHandler';
-import {addDragAndDropToElement} from '../libs/dragAndDropHandler';
+import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
+import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
 
 const heartProperties = [
     {
@@ -43,8 +43,8 @@ function loadHearts(count, container) {
     }
 }
 
-(function(){
+(function() {
     var container = document.querySelector('#container');
     container.style.position = 'relative';
-    loadHearts(6, container)
+    loadHearts(6, container);
 })();
