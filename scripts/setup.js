@@ -78,9 +78,5 @@ function loadHearts(count, container) {
 function setup() {
     var container = document.querySelector('#container');
     container.style.position = 'relative';
-    container.setAttribute('draggable', true);
-    container.addEventListener("dragover", function( event ) {
-        event.preventDefault();
-    }, false);
     loadHearts(6, container);
 }
