@@ -1,16 +1,6 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
-
-const heartProperties = [
-    {
-        name: 'width',
-        value: '50',
-    },
-    {
-        name: 'height',
-        value: '50',
-    },
-];
+import {heartProperties,} from '../libs/constants';
 
 function loadHearts(count, container) {
     const width = container.clientWidth;
@@ -37,7 +27,7 @@ function loadHearts(count, container) {
             return false;
         };
 
-        addDragAndDropToElement(newDiv);
+        addDragAndDropToElement(container, newDiv);
         
         container.appendChild(newDiv);
     }
