@@ -1,0 +1,17 @@
+/* exported resourcesHandler */
+
+var resourcesHandler = function() {
+    var that = {};
+   
+    that.loadResourceAsHtml = function(elementType = null, properties = null) {
+        var newElement = document.createElement(elementType);
+        if(properties) {
+            for(var i = 0; i < properties.length; i++) {
+                newElement.setAttribute(properties[i].name, properties[i].value);
+            }
+        }
+        return newElement;
+    };
+
+    return that;
+};
