@@ -2,16 +2,28 @@ import {
     CONTAINER_OFFSET,
     CONTAINER_HEIGHT,
     CONTAINER_WIDTH,
+    HEARTSIZE,
 } from '../libs/constants';
 
+/**
+ * Add drag and drop capability to param element that is held by param container
+ * @param container {HtmlElement}
+ * @param element {HtmlElement}
+ */
 export var addDragAndDropToElement = function(container, element) {
     element.addEventListener('mousedown', function( event ) {
         let shiftX = event.clientX - element.getBoundingClientRect().left;
         let shiftY = event.clientY - element.getBoundingClientRect().top;
-        const elementWidth = element.getBoundingClientRect().width;
-        const elementHeight = element.getBoundingClientRect().height;
+
+        const elementWidth = HEARTSIZE;
+        const elementHeight = HEARTSIZE;
 
         moveAt(event.pageX, event.pageY);
+
+        function onMouseMove(event) {
+            moveAt(event.clientX, event.clientY);
+        }
+
       
         function stopDragging() {
             container.removeEventListener('mousemove', onMouseMove);
@@ -46,10 +58,6 @@ export var addDragAndDropToElement = function(container, element) {
                 element.style.left = diffX + 'px';
                 element.style.top = diffY + 'px';
             }
-        }
-      
-        function onMouseMove(event) {
-            moveAt(event.clientX, event.clientY);
         }
       
         container.addEventListener('mousemove', onMouseMove);

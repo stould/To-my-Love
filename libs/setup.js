@@ -1,38 +1,53 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
-import {heartProperties,} from '../libs/constants';
+import {
+    heartProperties,
+    HEARTSIZE,
+    CONTAINER_HEIGHT,
+    CONTAINER_WIDTH,
+} from '../libs/constants';
 
+/**
+ * Create a new html resource
+ */
+function createImageContainer() {
+    var container = loadResourceAsHtml('div');
+    container.style.position = 'absolute';
+    container.style.top = Math.floor(Math.random() * (CONTAINER_HEIGHT - HEARTSIZE)) + 'px';
+    container.style.left = Math.floor(Math.random() * (CONTAINER_WIDTH - HEARTSIZE)) + 'px';
+    container.ondragstart = function() {
+        return false;
+    };
+    return container;
+}
+
+/**
+ * Load all the hearts and add them to the main container
+ * @param count {Integer}
+ * @param container {HtmlElement}
+ */
 function loadHearts(count, container) {
-    const width = container.clientWidth;
-    const height = container.clientHeight;
-
-    const heartSize = 50;
-
     for(var i = 0; i < count; i++) {
         const fileName = ('images/heart' + (i + 1) + '.svg');
         var properties = heartProperties;
+
         properties.push({
             name: 'src',
             value: fileName,
         });
-        var newImg = loadResourceAsHtml('img', properties);
-        var newDiv = document.createElement('div');
-        newDiv.appendChild(newImg);
 
-        newDiv.style.position = 'absolute';
-        newDiv.style.top = Math.floor(Math.random() * (height - heartSize)) + 'px';
-        newDiv.style.left = Math.floor(Math.random() * (width - heartSize)) + 'px';
-
-        newDiv.ondragstart = function() {
-            return false;
-        };
-
-        addDragAndDropToElement(container, newDiv);
+        var newImage = loadResourceAsHtml('img', properties);
+        var imageContainer = createImageContainer();
+        imageContainer.appendChild(newImage);
+        addDragAndDropToElement(container, imageContainer);
         
-        container.appendChild(newDiv);
+        container.appendChild(imageContainer);
     }
 }
 
+/**
+ * Main function to load the library and setup things properly
+ */
 (function() {
     var container = document.querySelector('#container');
     container.style.position = 'relative';

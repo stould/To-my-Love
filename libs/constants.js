@@ -8,10 +8,29 @@ const bodyStyle = window.getComputedStyle(body);
 var bodyMargin = bodyStyle.getPropertyValue('margin');
 bodyMargin = bodyMargin.replace('px', '');
 
+/**
+ * The offset pixels of the main container in relation to the page
+ */
 export const CONTAINER_OFFSET = parseInt(containerBorder) + parseInt(bodyMargin);
+
+/**
+ * Main container width
+ */
 export const CONTAINER_WIDTH = 1024;
+
+/**
+ * Main container height
+ */
 export const CONTAINER_HEIGHT = 768;
 
+/**
+ * Heart size
+ */
+export const HEARTSIZE = 50;
+
+/**
+ * Heart properties
+ */
 export const heartProperties = [
     {
         name: 'width',
