@@ -24,8 +24,10 @@ export var addDragAndDropToElement = function(container, element) {
             return;
         }
 
-        moveAt(event.pageX, event.pageY);
+        element.classList.add('grabbed');
 
+        moveAt(event.pageX, event.pageY);
+        
         function onMouseMove(event) {
             moveAt(event.clientX, event.clientY);
         }
@@ -69,6 +71,7 @@ export var addDragAndDropToElement = function(container, element) {
 
         element.onmouseup = function() {
             stopDragging();
+            element.classList.remove('grabbed');
         };
     }, false);
 };

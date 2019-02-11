@@ -1,0 +1,63 @@
+/* The Modal (background) */
+.modal {
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: fit-content;
+    border-width: 3px;
+    margin-bottom: 150px;
+}
+
+/* Modal Content */
+.modal-content .modal-content-img {
+    flex-basis: 350px;
+    max-width: 600px;
+    border-radius: 2%;
+    margin-top: 5px;
+}
+
+/* Modal Content */
+.modal-content .modal-content-text {
+    max-width: 600px;
+    border-radius: 2%;
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 20px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 18px; 
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

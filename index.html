@@ -1,40 +1,37 @@
+<!doctype html>
 <html>
     <head>
-        <style>
-            .main {
-                -khtml-user-select: none;
-                -moz-user-select: none;
-                -o-user-select: none;
-                -webkit-user-select: none;
-                background-color: rgba(100, 2, 2, 0.4);
-                border-style: solid;
-                border-width: 1px;
-                box-shadow: 5px 6px;
-                height: 768px;
-                user-select: none;
-                width: 1024px;
-            }
-
-            div img {
-                animation: pulse 1s ease infinite;
-                cursor: grab;
-            }
-
-            div.grabbed {
-                animation: pulse 0.3s ease infinite;
-            }
-            
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(0.8); }
-                100% { transform: scale(1); }
-            }
-        </style>
+        <link href="styles/modal.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
     </head>
 
     <body>
-        <div id="container" class="main">
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img class="modal-content-img" src="images/us/1.jpg"></img>
+                <img class="modal-content-img" src="images/us/2.jpg"></img>
+                <img class="modal-content-img" src="images/us/4.jpg"></img>
+                <img class="modal-content-img" src="images/us/5.jpg"></img>
+                <img class="modal-content-img" src="images/us/6.jpg"></img>
+                <img class="modal-content-img" src="images/us/7.jpg"></img>
+                <img class="modal-content-img" src="images/us/3.jpg"></img>
+                <div class="modal-content-text">
+                    Oi Bibs, espero que tenha gostado dessa pequena demonstração do carinho que eu tenho por você.
+                    Coloquei essas fotos para lembrar o quao feliz fico de estar ao seu lado e é aonde eu quero estar sempre.
+                </div>
+                <div class="modal-content-text">
+                    Te amo muito amor!
+                </div>
+                <div class="modal-content-text">
+                    Ass: Banzinho
+                </div>
+            </div>
         </div>
+        <div id="container" class="main"></div>
+        <button id="myBtn" style="margin-top:20px;">Open Modal</button>
         <script src="build/gamelib.js"></script>
     </body>
 </html>

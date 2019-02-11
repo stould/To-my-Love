@@ -1,5 +1,7 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
+import {handleModal,} from '../libs/modalHandler';
+
 import {
     heartProperties,
     HEARTSIZE,
@@ -11,7 +13,10 @@ import {
  * Create a new html resource
  */
 function createImageContainer() {
-    var container = loadResourceAsHtml('div');
+    var container = loadResourceAsHtml('div', [{
+        name: 'id',
+        value: 'heart',
+    },]);
     container.style.position = 'absolute';
     container.style.cursor = 'grab';
     container.style.top = Math.floor(Math.random() * (CONTAINER_HEIGHT - HEARTSIZE)) + 'px';
@@ -53,4 +58,8 @@ function loadHearts(count, container) {
     var container = document.querySelector('#container');
     container.style.position = 'relative';
     loadHearts(6, container);
+    // Get the modal
+    var modal = document.getElementById('myModal');
+    var modalHandler = handleModal(modal);
+    modalHandler.show();
 })();
