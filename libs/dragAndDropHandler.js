@@ -12,11 +12,17 @@ import {
  */
 export var addDragAndDropToElement = function(container, element) {
     element.addEventListener('mousedown', function( event ) {
-        let shiftX = event.clientX - element.getBoundingClientRect().left;
-        let shiftY = event.clientY - element.getBoundingClientRect().top;
+        const shiftX = event.clientX - element.getBoundingClientRect().left;
+        const shiftY = event.clientY - element.getBoundingClientRect().top;
         
         const elementWidth = HEARTSIZE;
         const elementHeight = HEARTSIZE;
+
+        //This is just a turn around, not sure yet how to solve the current problem:
+        //When the user clicks near the border of the element, mouseup is not fired. This code below helps to solve:
+        if(event.offsetX <= 3 || event.offsety <= 3 || event.offsetX + 3 >= HEARTSIZE || event.offsetY + 3 >= HEARTSIZE) {
+            return;
+        }
 
         moveAt(event.pageX, event.pageY);
 
