@@ -13,6 +13,7 @@ import {
 function createImageContainer() {
     var container = loadResourceAsHtml('div');
     container.style.position = 'absolute';
+    container.style.cursor = 'grab';
     container.style.top = Math.floor(Math.random() * (CONTAINER_HEIGHT - HEARTSIZE)) + 'px';
     container.style.left = Math.floor(Math.random() * (CONTAINER_WIDTH - HEARTSIZE)) + 'px';
     container.ondragstart = function() {

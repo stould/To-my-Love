@@ -2,11 +2,32 @@
     <head>
         <style>
             .main {
-                background-color: antiquewhite;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -o-user-select: none;
+                -webkit-user-select: none;
+                background-color: rgba(100, 2, 2, 0.4);
                 border-style: solid;
                 border-width: 1px;
+                box-shadow: 5px 6px;
                 height: 768px;
+                user-select: none;
                 width: 1024px;
+            }
+
+            div img {
+                animation: pulse 1s ease infinite;
+                cursor: grab;
+            }
+
+            div.grabbed {
+                animation: pulse 0.3s ease infinite;
+            }
+            
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(0.8); }
+                100% { transform: scale(1); }
             }
         </style>
     </head>

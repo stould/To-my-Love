@@ -14,7 +14,7 @@ export var addDragAndDropToElement = function(container, element) {
     element.addEventListener('mousedown', function( event ) {
         let shiftX = event.clientX - element.getBoundingClientRect().left;
         let shiftY = event.clientY - element.getBoundingClientRect().top;
-
+        
         const elementWidth = HEARTSIZE;
         const elementHeight = HEARTSIZE;
 
@@ -23,7 +23,6 @@ export var addDragAndDropToElement = function(container, element) {
         function onMouseMove(event) {
             moveAt(event.clientX, event.clientY);
         }
-
       
         function stopDragging() {
             container.removeEventListener('mousemove', onMouseMove);
