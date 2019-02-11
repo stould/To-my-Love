@@ -1,6 +1,5 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
-import {handleModal,} from '../libs/modalHandler';
 
 import {
     heartProperties,
@@ -58,8 +57,4 @@ function loadHearts(count, container) {
     var container = document.querySelector('#container');
     container.style.position = 'relative';
     loadHearts(6, container);
-    // Get the modal
-    var modal = document.getElementById('myModal');
-    var modalHandler = handleModal(modal);
-    modalHandler.show();
 })();
