@@ -25,8 +25,7 @@ export var addDragAndDropToElement = function(container, element) {
         }
 
         element.classList.add('grabbed');
-
-        moveAt(event.pageX, event.pageY);
+        element.style.zIndex = 1000;
         
         function onMouseMove(event) {
             moveAt(event.clientX, event.clientY);
@@ -34,7 +33,9 @@ export var addDragAndDropToElement = function(container, element) {
       
         function stopDragging() {
             container.removeEventListener('mousemove', onMouseMove);
+            element.classList.remove('grabbed');
             element.onmouseup = null;
+            element.style.zIndex = 1;
         }
 
         function moveAt(clientX, clientY) {

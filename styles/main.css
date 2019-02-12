@@ -17,6 +17,10 @@
     cursor: grab;
 }
 
+.timer {
+    margin-top: 20px;
+}
+
 .grabbed {
     animation: pulse 0.3s ease infinite;
 }

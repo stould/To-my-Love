@@ -1,3 +1,7 @@
+/**
+ * This function handles a modal
+ * @param modal {HtmlElement} 
+ */
 export function handleModal(modal) {
 
     var that = {};

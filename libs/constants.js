@@ -29,15 +29,25 @@ export const CONTAINER_HEIGHT = 768;
 export const HEARTSIZE = 50;
 
 /**
+ * Target size
+ */
+export const TARGETSIZE = 207;
+
+/**
+ * Time counter to reset target position, in milis
+ */
+export const TIMECOUNTER = 7000;
+
+/**
  * Heart properties
  */
 export const heartProperties = [
     {
         name: 'width',
-        value: '50',
+        value: HEARTSIZE.toString(),
     },
     {
         name: 'height',
-        value: '50',
+        value: HEARTSIZE.toString(),
     },
 ];

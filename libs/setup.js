@@ -1,5 +1,6 @@
 import  {loadResourceAsHtml,} from '../libs/resourcesHandler';
 import {addDragAndDropToElement,} from '../libs/dragAndDropHandler';
+import {handleTarget,} from '../libs/targetHandler';
 
 import {
     heartProperties,
@@ -57,4 +58,5 @@ function loadHearts(count, container) {
     var container = document.querySelector('#container');
     container.style.position = 'relative';
     loadHearts(6, container);
+    handleTarget(document.querySelector('#target'));
 })();
