@@ -27,6 +27,10 @@
 
 /* Modal Content */
 .modal-content .modal-content-img {
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
     flex-basis: 350px;
     max-width: 600px;
     border-radius: 2%;

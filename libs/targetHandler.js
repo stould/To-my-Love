@@ -5,19 +5,22 @@ import {
     TIMECOUNTER,
 } from '../libs/constants';
 
+import {getRandomInt,} from '../libs/helper';
+
 /**
  * Handler to the target element
  * @param target {HtmlElement}
  */
-export var handleTarget = function(target) {
+export var handleTarget = function(heartHandler, target) {
     var timer = document.getElementById('timer');
 
     var start = new Date().getTime();
     var end = null;
 
     function changePosition() {
-        target.style.top = Math.floor(Math.random() * (CONTAINER_HEIGHT - TARGETSIZE)) + 'px';
-        target.style.left = Math.floor(Math.random() * (CONTAINER_WIDTH - TARGETSIZE)) + 'px';
+        target.style.top = getRandomInt(CONTAINER_HEIGHT - TARGETSIZE) + 'px';
+        target.style.left = getRandomInt(CONTAINER_WIDTH - TARGETSIZE) + 'px';
+        heartHandler.delegate.randomizeHearts();
     }
 
     setInterval(() => {
