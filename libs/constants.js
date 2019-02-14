@@ -16,7 +16,7 @@ export const CONTAINER_OFFSET = parseInt(containerBorder) + parseInt(bodyMargin)
 /**
  * Main container width
  */
-export const CONTAINER_WIDTH = 1024;
+export const CONTAINER_WIDTH = 1400;
 
 /**
  * Main container height
